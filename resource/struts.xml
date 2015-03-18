@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.ui.theme" value="simple" />
+	
+	<package name="default" namespace="/" extends="json-default">
+		<interceptors>
+			<interceptor name="interceptor" class="iPet.action.Interceptor"/>
+		</interceptors>
+	
+		<default-interceptor-ref name="paramsPrepareParamsStack" />
+		
+		<global-results>
+			<result name="ajax" type="json">
+				<param name="root">#jsonData</param>
+			</result>
+			
+			<result name="exception">
+				/WEB-INF/page/common/exception.jsp
+			</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="exception" exception="java.lang.Exception"/>
+		</global-exception-mappings>
+
+	<!-- 
+	
+	<action name="login" class="loginAction" /> 
+	<action name="logout" class="crm.web.action.LogoutAction" />
+	 -->
+	 
+	 <!--  主页视图 -->
+	 <action name="home" class="iPet.action.HomeAction" >
+			<interceptor-ref name="interceptor"></interceptor-ref>
+			<interceptor-ref name="paramsPrepareParamsStack"></interceptor-ref>
+			<result name="home">
+				/WEB-INF/page/show/home.jsp
+			</result>
+		</action>
+	 
+	 
+		<action name="show_*_*" class="{1}Action" method="{2}">
+			<interceptor-ref name="interceptor"></interceptor-ref>
+			<interceptor-ref name="paramsPrepareParamsStack"></interceptor-ref>
+			
+			<result name="index">
+				/WEB-INF/page/show/{1}.jsp
+			</result>
+		</action>
+		
+	</package>
+	
+</struts>
