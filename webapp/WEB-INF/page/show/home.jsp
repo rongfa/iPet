@@ -12,20 +12,21 @@
 		<div class="content">
 			<div class="slider">
 				<ul class="image-slider">
-					<li><span><img class="responsive-image"
-							onclick="javascript:alert(0);"
-							src="/source/images/slider/001.png" alt="img"></span></li>
-					<li><span><img class="responsive-image"
-							src="/source/images/slider/002.png" alt="img"></span></li>
-					<li><span><img class="responsive-image"
-							src="/source/images/slider/003.png" alt="img"></span></li>
-					<li><span><img class="responsive-image"
-							src="/source/images/slider/004.png" alt="img"></span></li>
-					<li><span><img class="responsive-image"
-							src="/source/images/slider/005.png" alt="img"></span></li>
+					<li><span><img class="responsive-image" src="/source/images/slider/001.png" alt="img"></span></li>
+					<li><span><img class="responsive-image" src="/source/images/slider/002.png" alt="img"></span></li>
+					<li><span><img class="responsive-image" src="/source/images/slider/003.png" alt="img"></span></li>
+					<li><span><img class="responsive-image" src="/source/images/slider/004.png" alt="img"></span></li>
+					<li><span><img class="responsive-image" src="/source/images/slider/005.png" alt="img"></span></li>
 				</ul>
 			</div>
 
+			<div class="decoration">
+				<div class="deco1"></div>
+				<div class="deco2"></div>
+			</div>
+			
+			每日话题
+			
 			<div class="decoration">
 				<div class="deco1"></div>
 				<div class="deco2"></div>

@@ -161,18 +161,16 @@ h5 {
 .left-controls {
 	float: left;
 	padding-left: 20px;
-	padding-top: 20px;
 }
 
 .right-controls {
 	float: right;
 	padding-right: 20px;
-	padding-top: 20px;
 }
 
 .logo {
 	text-align: center;
-	margin-top: -37px;
+	margin-top: -75px;
 }
 
 .logo img {
@@ -325,7 +323,7 @@ li.roundabout-in-focus {
 }
 
 .nav-item em {
-	background-image: url(/source/images/nav/arrow.png);
+	background-image: url(/source/images/icons/arrow.png);
 	display: block;
 	width: 6px;
 	height: 8px;
@@ -336,7 +334,7 @@ li.roundabout-in-focus {
 }
 
 .nav-item strong {
-	background-image: url(/source/images/nav/arrow-down.png);
+	background-image: url(/source/images/icons/arrow-down.png);
 	display: block;
 	width: 8px;
 	height: 6px;
@@ -360,6 +358,66 @@ li.roundabout-in-focus {
 
 .folio-nav-icon {
 	background-image: url(/source/images/icons/img.png);
+	background-repeat: no-repeat;
+	background-position: 0px -8px;
+}
+
+.clip-nav-icon {
+	background-image: url(/source/images/icons/clip.png);
+	background-repeat: no-repeat;
+	background-position: 0px -8px;
+}
+
+.set-nav-icon {
+	background-image: url(/source/images/icons/cog2.png);
+	background-repeat: no-repeat;
+	background-position: 0px -8px;
+}
+
+.clocks-nav-icon {
+	background-image: url(/source/images/icons/clocks.png);
+	background-repeat: no-repeat;
+	background-position: 0px -8px;
+}
+
+.cloud-up-nav-icon {
+	background-image: url(/source/images/icons/cloud-up.png);
+	background-repeat: no-repeat;
+	background-position: 0px -8px;
+}
+
+.history-nav-icon {
+	background-image: url(/source/images/icons/chalendar.png);
+	background-repeat: no-repeat;
+	background-position: 0px -8px;
+}
+
+.cameras-nav-icon {
+	background-image: url(/source/images/icons/cameras.png);
+	background-repeat: no-repeat;
+	background-position: 0px -8px;
+}
+
+.columns-nav-icon {
+	background-image: url(/source/images/icons/columns.png);
+	background-repeat: no-repeat;
+	background-position: 0px -8px;
+}
+
+.magnifier-nav-icon {
+	background-image: url(/source/images/icons/magnifier.png);
+	background-repeat: no-repeat;
+	background-position: 0px -8px;
+}
+
+.location-nav-icon {
+	background-image: url(/source/images/icons/location.png);
+	background-repeat: no-repeat;
+	background-position: 0px -8px;
+}
+
+.user-nav-icon {
+	background-image: url(/source/images/icons/users.png);
 	background-repeat: no-repeat;
 	background-position: 0px -8px;
 }
@@ -423,7 +481,7 @@ li.roundabout-in-focus {
 }
 
 .sub-menu-item {
-	background-image: url(/source/images/nav/arrow.png);
+	background-image: url(/source/images/icons/arrow.png);
 	background-repeat: no-repeat;
 	background-position: 40px 5px;
 	display: block;
@@ -500,7 +558,7 @@ small {
 #tweets li {
 	font-style: italic;
 	list-style: none;
-	background-image: url(/source/images/nav/arrow.png);
+	background-image: url(/source/images/icons/arrow.png);
 	background-position: 0px 22px;
 	background-repeat: no-repeat;
 	padding-top: 15px;
@@ -1242,77 +1300,11 @@ small {
 	margin-bottom: 10px;
 }
 
-.checkbox {
-	font-family: 'Microsoft YaHei', sans-serif;
-	background-image: url(/source/images/ui/checkbox.png);
-	background-position: 0 0px;
-	background-repeat: no-repeat;
-	text-decoration: none;
-	color: #959595;
-	font-size: 12px;
-	padding-left: 25px;
-	margin-left: 10px;
-}
-
 .login-check {
 	padding-top: 0px;
 	padding-bottom: 3px;
 	background-position: 0 0px !important;
 }
-
-.selected-checkbox {
-	background-image: url(/source/images/ui/checkbox-selected.png);
-}
-
-.checkbox2 {
-	font-family: 'Microsoft YaHei', sans-serif;
-	background-image: url(/source/images/ui/checkbox2.png);
-	background-position: 0 0px;
-	background-repeat: no-repeat;
-	text-decoration: none;
-	color: #959595;
-	font-size: 12px;
-	padding-left: 25px;
-	margin-left: 10px;
-}
-
-.selected-checkbox2 {
-	background-image: url(/source/images/ui/checkbox2-selected.png);
-}
-
-.radiobox {
-	font-family: 'Microsoft YaHei', sans-serif;
-	background-image: url(/source/images/ui/radio.png);
-	background-position: 0 0px;
-	background-repeat: no-repeat;
-	text-decoration: none;
-	color: #959595;
-	font-size: 12px;
-	padding-left: 25px;
-	margin-left: 10px;
-}
-
-.selected-radiobox {
-	background-image: url(/source/images/ui/radio-selected.png);
-}
-
-.radiobox2 {
-	font-family: 'Microsoft YaHei', sans-serif;
-	background-image: url(/source/images/ui/radio2.png);
-	background-position: 0 -1px;
-	background-repeat: no-repeat;
-	text-decoration: none;
-	color: #959595;
-	font-size: 12px;
-	padding-left: 25px;
-	margin-left: 10px;
-}
-
-.selected-radiobox2 {
-	background-image: url(/source/images/ui/radio2-selected.png);
-}
-
-/*Notification Boxes*/
 
 /*//////////////////*/
 /*Notification Boxes*/
@@ -2253,7 +2245,7 @@ table tr:hover td {
 }
 
 .read-more-share {
-	background-image: url(/source/images/share-box/more.png);
+	background-image: url(/source/images/icons/more.png);
 	background-repeat: no-repeat;
 	background-position: center 6px;
 	padding-bottom: 5px;
@@ -2263,7 +2255,7 @@ table tr:hover td {
 }
 
 .facebook-share {
-	background-image: url(/source/images/share-box/facebook.png);
+	background-image: url(/source/images/icons/more.png);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-position: center 6px;
@@ -2274,7 +2266,7 @@ table tr:hover td {
 }
 
 .twitter-share {
-	background-image: url(/source/images/share-box/twitter.png);
+	background-image: url(/source/images/icons/more.png);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-position: center 6px;

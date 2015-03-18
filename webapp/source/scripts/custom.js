@@ -61,7 +61,10 @@ $(document).ready(function(){
 		//$('body').css('position', 'absolute') 
 		$('.open-left-sidebar').hide();
 		$('.close-left-sidebar').show();
+		$('.open-right-sidebar').show();
+		$('.close-right-sidebar').hide();
 		$('.sidebar-left').show();
+		$('.sidebar-right').hide();
 		$('.header-notification').delay(400).hide(300);
 		return false;
 	});
@@ -89,7 +92,10 @@ $(document).ready(function(){
 		//$('body').css('position', 'absolute') 
 		$('.open-right-sidebar').hide();
 		$('.close-right-sidebar').show();
+		$('.open-left-sidebar').show();
+		$('.close-left-sidebar').hide();
 		$('.sidebar-right').show();
+		$('.sidebar-left').hide();
 		$('.header-notification').delay(400).hide(300);
 		return false;
 	});
