@@ -27,7 +27,7 @@ p {
 
 body {
 	overflow-x: hidden;
-	background-image: url(/source/images/bg/sidebar.png);
+	background-color: #001028;
 	background-repeat: repeat;
 }
 
@@ -131,7 +131,7 @@ h5 {
 .content {
 	margin-top: 70px;
 	z-index: 999;
-	background-image: url(/source/images/bg/content.png);
+	background-color: #FFFFFF;
 	background-repeat: repeat;
 	width: 100%;
 	display: block;
@@ -140,10 +140,33 @@ h5 {
 
 .menu-content {
 	z-index: 1000;
-	background-color: #000000;
+	background-color: #001028;
 	width: 100%;
 	position: fixed;
 	height: 70px;
+}
+
+.menu-refresh {
+	z-index: 999999;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	background-color: #000000;
+	filter: alpha(opacity =       40);
+	-moz-opacity: 0.4;
+	-khtml-opacity: 0.4;
+	opacity: 0.4;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	cursor: pointer;
+}
+
+.load-page {
+	width: 100%;
+	text-align: center;
+	padding-bottom: 5px;
+	text-align: center;
 }
 
 .clear {
@@ -243,7 +266,7 @@ li.roundabout-in-focus {
 .sidebar-left {
 	margin-top: 70px;
 	padding: 10px;
-	background-image: url(/source/images/bg/sidebar.png);
+	background-color: #001028;
 	position: fixed;
 	overflow: hidden;
 	z-index: 99;

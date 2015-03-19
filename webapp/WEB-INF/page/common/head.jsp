@@ -10,3 +10,4 @@
 <script  type="text/javascript" src="/source/scripts/tweetable.js"></script>
 <script type="text/javascript"  src="/source/scripts/roundabout.js"></script>
 <script type="text/javascript" src="/source/scripts/custom.js"></script>
+<Link Rel="ICON NAME" href="/source/images/splash/splash-icon.png">
