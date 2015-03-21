@@ -9,12 +9,15 @@
 		<interceptors>
 			<interceptor name="interceptor" class="iPet.action.Interceptor"/>
 		</interceptors>
-	
 		<default-interceptor-ref name="paramsPrepareParamsStack" />
 		
 		<global-results>
 			<result name="ajax" type="json">
 				<param name="root">#jsonData</param>
+			</result>
+			
+			<result name="login" >
+				/WEB-INF/page/show/login.jsp
 			</result>
 			
 			<result name="exception">
@@ -25,12 +28,11 @@
 		<global-exception-mappings>
 			<exception-mapping result="exception" exception="java.lang.Exception"/>
 		</global-exception-mappings>
-
-	<!-- 
-	
-	<action name="login" class="loginAction" /> 
-	<action name="logout" class="crm.web.action.LogoutAction" />
-	 -->
+	 
+	  <!--  登入视图 -->
+	 <action name="login" class="iPet.action.LoginAction" />
+	  <!--  登出视图 -->
+	 <action name="logout" class="iPet.action.LogoutAction" />
 	 
 	 <!--  主页视图 -->
 	 <action name="home" class="iPet.action.HomeAction" >
@@ -40,17 +42,20 @@
 				/WEB-INF/page/show/home.jsp
 			</result>
 		</action>
-	 
-	 
-		<action name="show_*_*" class="{1}Action" method="{2}">
-			<interceptor-ref name="interceptor"></interceptor-ref>
-			<interceptor-ref name="paramsPrepareParamsStack"></interceptor-ref>
-			
-			<result name="index">
-				/WEB-INF/page/show/{1}.jsp
+		
+	 <!--  注册视图 -->
+	 <action name="regist" class="iPet.action.RegistAction" >
+			<result>
+				/WEB-INF/page/show/regist.jsp
+			</result>
+		</action>
+		
+	 <!--  找回密码视图 -->
+	 <action name="find" class="iPet.action.FindAction" >
+			<result>
+				/WEB-INF/page/show/find.jsp
 			</result>
 		</action>
 		
 	</package>
-	
 </struts>

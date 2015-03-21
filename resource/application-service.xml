@@ -11,5 +11,25 @@
 			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
 			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 	
+	<bean id="baseDao" class="iPet.dao.BaseDao" abstract="true">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
 	
+	<bean id="userService" class="iPet.service.impl.UserServiceImpl">
+		<property name="dao" >
+			<bean parent="baseDao" >
+					<constructor-arg value="iPet.model.User"/>
+			</bean>
+		</property>
+	</bean>
+	
+		<bean id="loginService" class="iPet.service.impl.LoginServiceImpl">
+			<property name="dao" >
+			<bean parent="baseDao" >
+					<constructor-arg value="iPet.model.User"/>
+			</bean>
+		</property>
+		</bean>
+		
+		<bean id="logoutService" class="iPet.service.impl.LogoutServiceImpl"/>
 </beans>

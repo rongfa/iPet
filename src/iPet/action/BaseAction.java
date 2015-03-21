@@ -28,6 +28,5 @@ public abstract class BaseAction extends ActionSupport implements Preparable {
 
 	@Override
 	public void prepare() throws Exception {
-		//TODO
 	}
 }

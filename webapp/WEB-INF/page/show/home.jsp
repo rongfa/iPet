@@ -2,8 +2,8 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <head>
+<%@include file="/WEB-INF/page/common/common.jsp"%>
 <%@include file="/WEB-INF/page/common/head.jsp"%>
-<%@include file="/WEB-INF/page/common/menu.jsp"%>
 <title>社交网络</title>
 <script type="text/javascript" src="/source/scripts/show/home.js"></script>
 </head>
@@ -64,6 +64,6 @@
 			</div>
 		</div>
 	</div>
-	<%@include file="/WEB-INF/page/common/footer.jsp"%>
+	<%@include file="/WEB-INF/page/common/menu.jsp"%>
 </body>
 </html>

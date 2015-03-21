@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="iPet.model">
+	<class name="User">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="name" unique="false" not-null="false"/>
+        <property name="phoneNum" unique="false" not-null="false"/>
+        <property name="password"  not-null="false"/>
+        <property name="sex"  not-null="false"/>
+        <property name="birthday" type="date"/>
+	</class>
+</hibernate-mapping>

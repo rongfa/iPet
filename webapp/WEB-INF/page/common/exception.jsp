@@ -1,11 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; UTF-8">
-<title>异常页面</title>
+<link href="/source/style/before.css" rel="stylesheet" type="text/css">
+<script type="text/javascript"  src="/source/scripts/jquery-1.8.2.min.js"></script>
+<script type="text/javascript"  src="/source/scripts/before.js"></script>
+<title>社交网络</title>
 </head>
 <body>
-	异常页面
+	<div  class="logo" >操作异常</div>
+	<div  class="content" >
+		<form id="contact" class="loginForm" >
+			 <input type="text" class="button" readonly="readonly" onclick="javascript:top.location.href='home.action';" value="去主页" /> 
+		</form>
+	</div>
 </body>
 </html>

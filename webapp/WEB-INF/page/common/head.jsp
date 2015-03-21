@@ -1,13 +1,21 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
-<link rel="apple-touch-icon" sizes="114x114" href="/source/images/splash/splash-icon.png"> 
-<link rel="apple-touch-startup-image" href="/source/images/splash/splash-screen.png" media="screen and (max-device-width: 320px)" /> 
-<link rel="apple-touch-startup-image" href="/source/images/splash/splash-screen@2x.png" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" /> 
-<meta name="apple-mobile-web-app-capable" content="yes"/>
-<link href="/source/style/style.css" rel="stylesheet" type="text/css">
-<script type="text/javascript"  src="/source/scripts/jquery-1.8.2.min.js"></script>
-<script type="text/javascript"  src="/source/scripts/easing.js"></script>
-<script  type="text/javascript" src="/source/scripts/tweetable.js"></script>
-<script type="text/javascript"  src="/source/scripts/roundabout.js"></script>
-<script type="text/javascript" src="/source/scripts/custom.js"></script>
-<Link Rel="ICON NAME" href="/source/images/splash/splash-icon.png">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<div class="menu-content">
+     <div class="left-controls">
+            <a href="#" class="open-left-sidebar"><img src="/source/images/icons/comment@2x.png" class="replace-2x" width="70" alt="img"></a>
+            <a href="#" class="close-left-sidebar"><img src="/source/images/icons/arrow-right@2x.png" width="70" alt="img"></a>
+    </div>
+        
+      <div class="right-controls">
+            <a href="#" class="open-right-sidebar"><img src="/source/images/icons/magnifier@2x.png" class="replace-2x" width="70" alt="img"></a>
+            <a href="#" class="close-right-sidebar"><img src="/source/images/icons/arrow-left@2x.png" width="70" alt="img"></a>
+      </div>
+      
+      <div class="clear"></div>
+      <p class="logo"><img src="/source/images/icons/linux@2x.png" alt="img" width="70" ></p>
+</div>
+
+
+<div class="menu-refresh">
+	<img src="/source/images/icons/refresh2@2x.png" width="40" alt="img" onclick="javascript:location.reload();">
+</div>

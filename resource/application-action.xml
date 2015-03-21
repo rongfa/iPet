@@ -11,5 +11,15 @@
 			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
 			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
-	
+		<bean name="baseAction" abstract="true" scope="prototype"/>
+		
+		<bean name="homeAction" class="iPet.action.HomeAction" parent="baseAction"/>
+		
+		<bean name="loginAction" class="iPet.action.LoginAction" parent="baseAction">
+			<property name="loginService" ref="loginService"/>
+		</bean>
+		
+		<bean name="logoutAction" class="iPet.action.LogoutAction" parent="baseAction">
+			<property name="logoutService" ref="logoutService"/>
+		</bean>
 </beans>

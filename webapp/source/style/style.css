@@ -397,6 +397,12 @@ li.roundabout-in-focus {
 	background-position: 0px -8px;
 }
 
+.stumble-nav-icon {
+	background-image: url(/source/images/icons/stumble.png);
+	background-repeat: no-repeat;
+	background-position: 0px -8px;
+}
+
 .clocks-nav-icon {
 	background-image: url(/source/images/icons/clocks.png);
 	background-repeat: no-repeat;

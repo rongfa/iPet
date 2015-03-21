@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+body {
+	overflow-x: hidden;
+	background-color: #001028;
+}
+
+.rule {
+	margin-top: 30px;
+	position: relative;
+	text-align: center;
+	font-size: 18px;
+	width: 100%;
+	color: #FFFFFF;
+}
+
+.rule a {
+	color: #FF9900;
+	font-size: 18px;
+	margin-right: 0px;
+}
+
+.right-a{
+	text-align: right;
+	margin-top: 30px;
+	position: relative;
+}
+
+.logo {
+	margin-top: 10%;
+	font-size: 70px;
+	color: #FFFFFF;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	position: relative;
+}
+
+.content {
+	margin-top: 30px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	position: relative;
+	text-align: center;
+}
+
+a {
+	color: #FFFFFF;
+	cursor: pointer;
+	font-size: 20px;
+	width: 100%;
+	margin-right: 20px;
+	text-decoration: none;
+}
+
+input {
+	width: 100%;
+	height: 50px;
+	position: relative;
+	background-color: #FFFFFFF;
+	font-size: 23px;
+	border-color: #001028;
+	border-bottom: 1px;
+	text-indent: 35px;
+}
+
+.verify-button {
+	color: #FFFFFF;
+	background-color: #3399FF;
+	cursor: pointer;
+	width: 49%;
+	text-indent: 0px;
+	text-align: center;
+}
+
+.button {
+	text-indent: 0px;
+	color: #FFFFFF;
+	text-align: center;
+	background-color: #3399FF;
+	cursor: pointer;
+	margin-top: 17px;
+}
