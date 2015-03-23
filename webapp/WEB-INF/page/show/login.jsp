@@ -9,14 +9,11 @@
 <body>
 	<div  class="logo" >iPet</div>
 	<div  class="content" >
-		<form id="login" class="loginForm"  method="post" >
-			<input type="text"  id="name" size="3" placeholder="手机号码/昵称"/>
-			 <input type="password" id="password"  placeholder="密码" /> 
-			 <input type="text" class="button" readonly="readonly" onclick="login()" value="登入" /> 
-		</form>
+		<input type="text"  id="name" placeholder="电子邮箱/昵称"/>
+		<input type="password" id="password"  placeholder="密码" /> 
+		<input type="text" class="button" readonly="readonly" onclick="login()" value="登入" /> 
 		<div  class="right-a" ><a href="regist.action">申请加入iPet</a></div>
 		<div  class="right-a" ><a href="find.action">需要帮助?</a></div>
 	</div>
-	
 </body>
 </html>

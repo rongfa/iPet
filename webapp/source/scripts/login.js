@@ -1,5 +1,5 @@
 function login() {
-	$.post("login.action", {
+	$.post("login.login.action", {
 		name : $("#name").val(),
 		password : $("#password").val()
 	}, function(data) {
@@ -10,7 +10,7 @@ function login() {
 			}
 			location.href = "home.action";
 		} else {
-			alert("登陆失败");
+			alert(data.message);
 		}
 	});
 }

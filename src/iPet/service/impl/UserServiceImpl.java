@@ -13,6 +13,15 @@ import java.io.Serializable;
 public class UserServiceImpl implements IUserService {
 
 	private BaseDao<User> dao;
+	private User user = new User();
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 
 	public void setDao(BaseDao<User> dao) {
 		this.dao = dao;
@@ -62,5 +71,22 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public void destroy(Serializable id) {
 		dao.delete(id);
+	}
+
+	@Override
+	public boolean findUserByEmail(String email) {
+		Object user = dao.findObjectByHql("FROM User u WHERE u.email = ?",
+				email);
+		return user != null;
+	}
+
+	@Override
+	public void regist(String email, String password) {
+		User newUser = new User();
+		newUser.setEmail(email);
+		newUser.setName(email.substring(0, email.indexOf('@')));
+		newUser.setSex(0);
+		newUser.setPassword(MD5.encode(password));
+		dao.save(newUser);
 	}
 }

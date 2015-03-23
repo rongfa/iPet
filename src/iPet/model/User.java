@@ -1,19 +1,17 @@
 package iPet.model;
 
-import java.util.Date;
-
 /**
  * 用户
+ * 
  * @author rongfa
  */
 public class User {
 
 	private String id;
 	private String name;
-	private String phoneNum;
+	private String email;
 	private String password;
 	private int sex = 0;
-	private Date birthday;
 
 	public String getId() {
 		return id;
@@ -31,12 +29,12 @@ public class User {
 		this.name = name;
 	}
 
-	public String getPhoneNum() {
-		return phoneNum;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setPhoneNum(String phoneNum) {
-		this.phoneNum = phoneNum;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getPassword() {
@@ -45,14 +43,6 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public Date getBirthday() {
-		return birthday;
-	}
-
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
 	}
 
 	public int getSex() {

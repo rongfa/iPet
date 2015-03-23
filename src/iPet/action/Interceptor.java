@@ -28,7 +28,7 @@ public class Interceptor extends AbstractInterceptor {
 			for (Cookie cookie : cookies) {
 				if (UserContext.USER_IN_COOKIE.equals(cookie.getName())) {
 					if (cookie.getValue()!= null &&! cookie.getValue().isEmpty()) {
-						ActionContext.getContext().getSession() .put(UserContext.USER_IN_SESSION, user);
+						ActionContext.getContext().getSession().put(UserContext.USER_IN_SESSION, user);
 						return invocation.invoke();
 					}
 				}

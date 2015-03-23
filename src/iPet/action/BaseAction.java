@@ -13,6 +13,7 @@ public abstract class BaseAction extends ActionSupport implements Preparable {
 	protected static final String HOME = "home";
 	protected static final String INDEX = "index";
 	protected static final String AJAX = "ajax";
+	protected static final String AFFIRMPASSORD = "affirmPassord";
 
 	public String execute() throws Exception {
 		return INDEX;

@@ -20,4 +20,8 @@ public interface IUserService {
 
 	PageResult<User> findPageResult(IQuery query);
 
+	boolean findUserByEmail(String email);
+
+	void regist(String email, String password);
+
 }

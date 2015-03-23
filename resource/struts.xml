@@ -29,10 +29,11 @@
 			<exception-mapping result="exception" exception="java.lang.Exception"/>
 		</global-exception-mappings>
 	 
-	  <!--  登入视图 -->
-	 <action name="login" class="iPet.action.LoginAction" />
 	  <!--  登出视图 -->
 	 <action name="logout" class="iPet.action.LogoutAction" />
+	 
+	  <!--  登入视图 -->
+	 <action name="login.*" class="iPet.action.LoginAction" method="{1}"/>
 	 
 	 <!--  主页视图 -->
 	 <action name="home" class="iPet.action.HomeAction" >
@@ -44,18 +45,24 @@
 		</action>
 		
 	 <!--  注册视图 -->
-	 <action name="regist" class="iPet.action.RegistAction" >
+	 <action name="regist.*" class="iPet.action.RegistAction"  method="{1}">
 			<result>
 				/WEB-INF/page/show/regist.jsp
 			</result>
-		</action>
-		
+	</action>
+	
 	 <!--  找回密码视图 -->
-	 <action name="find" class="iPet.action.FindAction" >
+	 <action name="find.*" class="iPet.action.FindAction"  method="{1}">
 			<result>
 				/WEB-INF/page/show/find.jsp
 			</result>
-		</action>
-		
+	</action>
+
+	<!-- 确认密码视图 -->
+	<action name="affirmPassord.*" class="iPet.action.AffirmPassordAction" method="{1}">
+		<result>
+			/WEB-INF/page/show/affirmPassord.jsp
+		</result>
+	</action>
 	</package>
 </struts>

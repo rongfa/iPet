@@ -27,6 +27,10 @@ public class LoginAction extends BaseAction {
 	}
 
 	public String execute() throws Exception {
+		return LOGIN;
+	}
+	
+	public String login() throws Exception {
 		JSON json = new JSON();
 		User user = loginService.login(name, password);
 		if (user != null) {

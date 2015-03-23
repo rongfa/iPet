@@ -22,4 +22,16 @@
 		<bean name="logoutAction" class="iPet.action.LogoutAction" parent="baseAction">
 			<property name="logoutService" ref="logoutService"/>
 		</bean>
+		
+		<bean name="registAction" class="iPet.action.RegistAction" parent="baseAction">
+			<property name="userService" ref="userService"/>
+		</bean>
+		
+		<bean name="findAction" class="iPet.action.FindAction" parent="baseAction">
+			<property name="userService" ref="userService"/>
+		</bean>
+		
+		<bean name="affirmPassordAction" class="iPet.action.AffirmPassordAction" parent="baseAction">
+			<property name="userService" ref="userService"/>
+		</bean>
 </beans>

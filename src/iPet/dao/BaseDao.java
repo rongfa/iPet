@@ -63,7 +63,6 @@ public class BaseDao<T> extends HibernateDaoSupport {
 		if (StringUtils.isNotBlank(where)) {
 			builder.append(" where ").append(where);
 		}
-		System.out.println("PageResult findPageResult:" + builder.toString());
 
 		List<T> rows = getHibernateTemplate().execute(
 				new HibernateCallback<List<T>>() {
