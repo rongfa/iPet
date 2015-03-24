@@ -5,7 +5,9 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 出来公共的查询信息:当前页面,一页显示的条数,hql语句
+ * @Description: 公共的查询信息:当前页面,一页显示的条数,hql语句
+ * @author rongfa
+ * @date 2015-3-24 下午9:20:30
  */
 @SuppressWarnings("all")
 public abstract class BaseQuery implements IQuery {

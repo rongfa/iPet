@@ -1,6 +1,5 @@
 package iPet.util.mail;
 
-
 import java.util.Date;
 import java.util.Properties;
 import javax.mail.Address;
@@ -16,12 +15,17 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
 /**
- * 简单邮件（不带附件的邮件）发送器
+ * @Description: 简单邮件（不带附件的邮件）发送器
+ * @author rongfa
+ * @date 2015-3-24 下午9:36:17
  */
 public class SimpleMailSender {
 	/**
-	 * 以文本格式发送邮件
-	 * @param mailInfo  待发送的邮件的信息
+	 * 
+	 * @Description: 以文本格式发送邮件
+	 * @param mailInfo
+	 *            待发送的邮件的信息
+	 * @return 发送状态
 	 */
 	public boolean sendTextMail(MailSenderInfo mailInfo) {
 		// 判断是否需要身份认证
@@ -32,7 +36,7 @@ public class SimpleMailSender {
 			authenticator = new MyAuthenticator(mailInfo.getUserName(), mailInfo.getPassword());
 		}
 		// 根据邮件会话属性和密码验证器构造一个发送邮件的session
-		Session sendMailSession = Session .getDefaultInstance(pro, authenticator);
+		Session sendMailSession = Session.getDefaultInstance(pro, authenticator);
 		try {
 			// 根据session创建一个邮件消息
 			Message mailMessage = new MimeMessage(sendMailSession);
@@ -60,8 +64,10 @@ public class SimpleMailSender {
 	}
 
 	/**
-	 * 以HTML格式发送邮件
-	 * @param mailInfo 待发送的邮件信息
+	 * @Description: 以HTML格式发送邮件
+	 * @param mailInfo
+	 *            待发送的邮件信息
+	 * @return 发送状态
 	 */
 	public static boolean sendHtmlMail(MailSenderInfo mailInfo) {
 		// 判断是否需要身份认证
@@ -105,7 +111,15 @@ public class SimpleMailSender {
 		}
 		return false;
 	}
-	
+
+	/**
+	 * @Description: 发送邮件
+	 * @param address
+	 *            发送的email地址
+	 * @param message
+	 *            邮件信息
+	 * @return 发送状态
+	 */
 	public static boolean send(String address, String message) {
 		// 这个类主要是设置邮件
 		MailSenderInfo mailInfo = new MailSenderInfo();

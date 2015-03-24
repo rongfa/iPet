@@ -1,10 +1,12 @@
 package iPet.util.mail;
 
-/**   
- * 发送邮件需要使用的基本信息 
- */
 import java.util.Properties;
 
+/**
+ * @Description: 发送邮件需要使用的基本信息
+ * @author rongfa
+ * @date 2015-3-24 下午9:35:26
+ */
 public class MailSenderInfo {
 	// 发送邮件的服务器的IP和端口
 	private String mailServerHost;
@@ -26,7 +28,8 @@ public class MailSenderInfo {
 	private String[] attachFileNames;
 
 	/**
-	 * 获得邮件会话属性
+	 * @Description: 获得邮件会话属性
+	 * @return 邮件会话属性
 	 */
 	public Properties getProperties() {
 		Properties p = new Properties();

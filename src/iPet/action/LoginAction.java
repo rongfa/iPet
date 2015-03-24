@@ -6,7 +6,9 @@ import iPet.util.JSON;
 import iPet.util.UserContext;
 
 /**
- * @author Administrator
+ * @Description: 登陆
+ * @author rongfa
+ * @date 2015-3-24 下午8:39:25
  */
 public class LoginAction extends BaseAction {
 	private static final long serialVersionUID = -7179290958637332022L;
@@ -29,7 +31,12 @@ public class LoginAction extends BaseAction {
 	public String execute() throws Exception {
 		return LOGIN;
 	}
-	
+
+	/**
+	 * @Description: 登陆
+	 * @return 返回视图
+	 * @throws Exception
+	 */
 	public String login() throws Exception {
 		JSON json = new JSON();
 		User user = loginService.login(name, password);

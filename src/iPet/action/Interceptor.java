@@ -10,16 +10,17 @@ import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 
 /**
- * 拦截器
- * @author Administrator
+ * @Description: 拦截器
+ * @author rongfa
+ * @date 2015-3-24 下午8:38:34
  */
-
 public class Interceptor extends AbstractInterceptor {
 
 	private static final long serialVersionUID = 2878389311173605851L;
 
+	@Override
 	public String intercept(ActionInvocation invocation) throws Exception {
-		Object user = ActionContext.getContext().getSession() .get(UserContext.USER_IN_SESSION);
+		Object user = ActionContext.getContext().getSession().get(UserContext.USER_IN_SESSION);
 		if (user == null) {
 			Cookie[] cookies = ServletActionContext.getRequest().getCookies();
 			if (cookies == null) {
@@ -27,7 +28,7 @@ public class Interceptor extends AbstractInterceptor {
 			}
 			for (Cookie cookie : cookies) {
 				if (UserContext.USER_IN_COOKIE.equals(cookie.getName())) {
-					if (cookie.getValue()!= null &&! cookie.getValue().isEmpty()) {
+					if (cookie.getValue() != null && !cookie.getValue().isEmpty()) {
 						ActionContext.getContext().getSession().put(UserContext.USER_IN_SESSION, user);
 						return invocation.invoke();
 					}

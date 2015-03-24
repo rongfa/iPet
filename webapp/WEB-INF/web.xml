@@ -14,7 +14,7 @@
 	</filter-mapping>
 
 	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>/commonUI/index.jsp</welcome-file>
 	</welcome-file-list>
 
 	<context-param>
@@ -24,7 +24,7 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	
+
 	<filter>
 		<filter-name>osiv</filter-name>
 		<filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
@@ -33,7 +33,7 @@
 			<param-value>sessionFactory</param-value>
 		</init-param>
 	</filter>
-	
+
 	<filter-mapping>
 		<filter-name>osiv</filter-name>
 		<url-pattern>/*</url-pattern>

@@ -1,9 +1,9 @@
 package iPet.model;
 
 /**
- * 用户
- * 
+ * @Description: 用户
  * @author rongfa
+ * @date 2015-3-24 下午9:19:47
  */
 public class User {
 

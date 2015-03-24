@@ -5,6 +5,11 @@ import iPet.model.User;
 import iPet.service.ILoginService;
 import iPet.util.MD5;
 
+/**
+ * @Description:登入
+ * @author rongfa
+ * @date 2015-3-24 下午9:22:24
+ */
 public class LoginServiceImpl implements ILoginService {
 
 	private BaseDao<User> dao;
@@ -15,11 +20,14 @@ public class LoginServiceImpl implements ILoginService {
 
 	@Override
 	public User login(String name, String password) {
-		String md5Pwd = MD5.encode(password);
-		Object user = dao .findObjectByHql( "FROM User u WHERE u.name = ? AND u.password = ?", name, md5Pwd);
-		if (user == null) {
-			user = dao.findObjectByHql( "FROM User u WHERE u.email = ? AND u.password = ?", name, md5Pwd);
+		Object user = dao.findObjectByHql("FROM User u WHERE u.email = ? OR u.name = ? ", name, name);
+		if (user != null) {
+			String dbPassword = ((User) user).getPassword();
+			String md5Pwd = MD5.encode(password);
+			if (dbPassword.equals(md5Pwd)) {
+				return (User) user;
+			}
 		}
-		return user == null ? null : (User) user;
+		return null;
 	}
 }

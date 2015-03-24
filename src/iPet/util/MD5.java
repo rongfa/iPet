@@ -1,19 +1,9 @@
 package iPet.util;
 
-/*
- * Copyright 2006-2008 the original author or authors.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * 
- *      http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+/**
+ * @Description: 通过MD加密
+ * @author rongfa
+ * @date 2015-3-24 下午9:32:43
  */
 public class MD5 {
 
@@ -49,18 +39,14 @@ public class MD5 {
 
 	static final int S44 = 21;
 
-	static final byte PADDING[] = { -128, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-			0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-			0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-			0, 0, 0, 0, 0, 0, 0 };
+	static final byte PADDING[] = { -128, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
 	public static long b2iu(byte b) {
 		return (b >= 0 ? b : b & 0xff);
 	}
 
 	public static String byteHEX(byte ib) {
-		char Digit[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A',
-				'B', 'C', 'D', 'E', 'F' };
+		char Digit[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
 		char ob[] = new char[2];
 		ob[0] = Digit[ib >>> 4 & 0xf];
 		ob[1] = Digit[ib & 0xf];
@@ -94,8 +80,7 @@ public class MD5 {
 	private void Decode(long output[], byte input[], int len) {
 		int i = 0;
 		for (int j = 0; j < len; j += 4) {
-			output[i] = b2iu(input[j]) | b2iu(input[j + 1]) << 8
-					| b2iu(input[j + 2]) << 16 | b2iu(input[j + 3]) << 24;
+			output[i] = b2iu(input[j]) | b2iu(input[j + 1]) << 8 | b2iu(input[j + 2]) << 16 | b2iu(input[j + 3]) << 24;
 			i++;
 		}
 
@@ -136,8 +121,7 @@ public class MD5 {
 		md5Final();
 		digestHexStr = "";
 		for (int i = 0; i < 16; i++)
-			digestHexStr = String.valueOf(digestHexStr)
-					+ String.valueOf(byteHEX(digest[i]));
+			digestHexStr = String.valueOf(digestHexStr) + String.valueOf(byteHEX(digest[i]));
 
 		return digestHexStr;
 	}
@@ -190,8 +174,7 @@ public class MD5 {
 		state[3] = 0x10325476L;
 	}
 
-	private void md5Memcpy(byte output[], byte input[], int outpos, int inpos,
-			int len) {
+	private void md5Memcpy(byte output[], byte input[], int outpos, int inpos, int len) {
 		for (int i = 0; i < len; i++)
 			output[outpos + i] = input[inpos + i];
 

@@ -2,6 +2,11 @@ package iPet.pager;
 
 import java.util.List;
 
+/**
+ * @Description:查询接口
+ * @author rongfa
+ * @date 2015-3-24 下午9:20:49
+ */
 public interface IQuery {
 
 	public abstract int getCurrentPage();

@@ -1,16 +1,3 @@
-/*
- * tweetable 1.6 - jQuery twitter feed generator plugin
- *
- * Copyright (c) 2009 Philip Beel (http://www.theodin.co.uk/)
- * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php) 
- * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
- *
- * With modifications from Philipp Robbel (http://www.robbel.com/) and Patrick DW (stackoverflow)
- * for IE compatibility.
- *
- * Revision: $Id: jquery.tweetable.js 2011-01-06 $ 
- *
- */
 (function ($) {
     //define the tweetable plugin
     $.fn.tweetable = function (options) {

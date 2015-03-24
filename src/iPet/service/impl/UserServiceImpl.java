@@ -6,10 +6,14 @@ import iPet.pager.IQuery;
 import iPet.pager.PageResult;
 import iPet.service.IUserService;
 import iPet.util.LogicException;
-import iPet.util.MD5;
 
 import java.io.Serializable;
 
+/**
+ * @Description: 操作用户
+ * @author rongfa
+ * @date 2015-3-24 下午9:22:55
+ */
 public class UserServiceImpl implements IUserService {
 
 	private BaseDao<User> dao;
@@ -33,8 +37,7 @@ public class UserServiceImpl implements IUserService {
 		User u = findUserByName(user.getName());
 		if (u == null) {
 			// 获取MD5密码
-			String md5Pwd = MD5.encode(user.getPassword());
-			user.setPassword(md5Pwd);
+			user.setPassword(user.getPassword());
 			dao.save(user);
 		} else {
 			throw new LogicException("用户名已经存在了.");
@@ -74,19 +77,8 @@ public class UserServiceImpl implements IUserService {
 	}
 
 	@Override
-	public boolean findUserByEmail(String email) {
-		Object user = dao.findObjectByHql("FROM User u WHERE u.email = ?",
-				email);
-		return user != null;
-	}
-
-	@Override
-	public void regist(String email, String password) {
-		User newUser = new User();
-		newUser.setEmail(email);
-		newUser.setName(email.substring(0, email.indexOf('@')));
-		newUser.setSex(0);
-		newUser.setPassword(MD5.encode(password));
-		dao.save(newUser);
+	public User findUserByEmail(String email) {
+		Object user = dao.findObjectByHql("FROM User u WHERE u.email = ?", email);
+		return (User) (user == null ? null : user);
 	}
 }

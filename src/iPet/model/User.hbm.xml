@@ -4,12 +4,12 @@
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="iPet.model">
 	<class name="User">
-        <id name="id" column="id">
-            <generator class="native"/>
-        </id>
-        <property name="name" unique="false" not-null="true"/>
-        <property name="email" unique="false" not-null="true"/>
-        <property name="password"  not-null="true"/>
-        <property name="sex"  not-null="true"/>
+		<id name="id" column="id">
+			<generator class="native" />
+		</id>
+		<property name="name" unique="false" not-null="true" />
+		<property name="email" unique="false" not-null="true" />
+		<property name="password" not-null="true" />
+		<property name="sex" not-null="true" />
 	</class>
 </hibernate-mapping>

@@ -58,7 +58,7 @@ $(document).ready(function(){
 			'easeOutQuad', // the type of easing
 			function() { // the callback
 		});
-		//$('body').css('position', 'absolute') 
+		// $('body').css('position', 'absolute')
 		$('.open-left-sidebar').hide();
 		$('.close-left-sidebar').show();
 		$('.open-right-sidebar').show();
@@ -89,7 +89,7 @@ $(document).ready(function(){
 			'easeOutQuad', // the type of easing
 			function() { // the callback
 		});
-		//$('body').css('position', 'absolute') 
+		// $('body').css('position', 'absolute')
 		$('.open-right-sidebar').hide();
 		$('.close-right-sidebar').show();
 		$('.open-left-sidebar').show();
