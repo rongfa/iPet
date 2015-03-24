@@ -6,7 +6,6 @@ import iPet.util.CommonUtil;
 import iPet.util.JSON;
 import iPet.util.MD5;
 import iPet.util.UserContext;
-import iPet.util.mail.SimpleMailSender;
 
 import com.opensymphony.xwork2.ActionContext;
 
@@ -56,7 +55,7 @@ public class AffirmPassordAction extends BaseAction {
 		String email = (String) ActionContext.getContext().getSession().get("email");
 		JSON json = new JSON();
 		String random = CommonUtil.getRandom();
-		SimpleMailSender.send(email, random);
+		CommonUtil.send(email, random);
 		ActionContext.getContext().getSession().put(email, random);
 		putJSON(json);
 		return AJAX;

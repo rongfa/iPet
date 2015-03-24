@@ -3,7 +3,6 @@ package iPet.action;
 import iPet.service.IUserService;
 import iPet.util.CommonUtil;
 import iPet.util.JSON;
-import iPet.util.mail.SimpleMailSender;
 
 import com.opensymphony.xwork2.ActionContext;
 
@@ -44,7 +43,7 @@ public class RegistAction extends BaseAction {
 			json.setMessage("该用户已注册");
 		} else {
 			String random = CommonUtil.getRandom();
-			SimpleMailSender.send(email, random);
+			CommonUtil.send(email, random);
 			ActionContext.getContext().getSession().put(email, random);
 		}
 		putJSON(json);
