@@ -22,4 +22,10 @@ function getVerification() {
 
 $(function() {
 	passNull($("#email"));
+	var email = $("#email");
+	email.bind("keydown", function(event) {
+		if (event.keyCode == 13) {
+			getVerification();
+		}
+	});
 });

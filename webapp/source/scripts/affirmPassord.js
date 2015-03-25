@@ -62,4 +62,11 @@ $(function() {
 			alert("两次输入密码不一致");
 		}
 	});
+	
+	var input = $("input");
+	input.bind("keydown", function(event) {
+		if (event.keyCode == 13) {
+			affirm();
+		}
+	});
 });

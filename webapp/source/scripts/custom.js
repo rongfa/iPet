@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	
 (function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")
 	
 	  var isiPhone = navigator.userAgent.toLowerCase().indexOf("iphone");
@@ -163,21 +162,21 @@ $(document).ready(function(){
 		$(this).toggleClass('selected-radiobox2');
 		return false;
 	});
-	
-	var myPhotoSwipe = $("#gallery a").photoSwipe({ enableMouseWheel: false , enableKeyboard: false });
-
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+function slide() {
+    var $slidebtn=$($('.slide-box-button'));
+    var $slidebox=$($('.slide-box-button')).parent().parent();
+    if($slidebox.css('right')=="-152px"){
+      $slidebox.animate({
+        right:0
+      },500);
+      $slidebtn.children("i").removeClass().addClass("icon-chevron-right");
+    }
+    else{
+      $slidebox.animate({
+        right:-152
+      },500);
+      $slidebtn.children("i").removeClass().addClass("icon-chevron-left");
+    }
+}

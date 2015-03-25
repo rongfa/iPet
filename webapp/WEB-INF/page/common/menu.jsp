@@ -7,7 +7,9 @@
 				<div class="sidebar-header-decoration"></div>
 				<a href="#" class="nav-item home-nav-icon">主页</a>
 				<div class="side-deco"></div>
-				<a href="#" id="sub-menu-one" class="nav-item user-nav-icon">社交圈<em></em></a>
+				<a href="#" id="sub-menu-one" class="nav-item user-nav-icon">
+						社交圈<em></em>
+				</a>
 				<div class="side-deco"></div>
 				<div class="sub-menu-one">
 						<a class="sub-menu-item" href="#">关注</a>
@@ -17,7 +19,9 @@
 						<a class="sub-menu-item" href="#">小伙伴</a>
 						<div class="side-deco"></div>
 				</div>
-				<a href="#" id="sub-menu-two" class="nav-item text-nav-icon">消息<em></em></a>
+				<a href="#" id="sub-menu-two" class="nav-item text-nav-icon">
+						消息<em></em>
+				</a>
 				<div class="side-deco"></div>
 				<div class="sub-menu-two">
 						<a class="sub-menu-item" href="#">回复我的</a>
@@ -53,5 +57,14 @@
 				<div class="side-deco"></div>
 				<a href="#" class="nav-item location-nav-icon"> 附近</a>
 				<div class="side-deco"></div>
+		</div>
+</div>
+
+<div class="slide-box">
+		<div class="padd">
+				<div class="slide-box-button" onclick="slide()"></div>
+				<a href="#"><img src="/source/images/icons/upload@2x.png"></a>
+				<a onclick="javascript:window.location.reload(true);"><img src="/source/images/icons/refresh@2x.png"></a>
+				<a  onclick="javascript:history.go(-1);"><img src="/source/images/icons/arrow-left@2x.png"></a>
 		</div>
 </div>

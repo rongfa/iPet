@@ -7,8 +7,8 @@ function login() {
 		alert("密码不能为空");
 	} else {
 		$.post("login.login.action", {
-			name : nameValue,
-			password : pwdValue
+		    name : nameValue,
+		    password : pwdValue
 		}, function(data) {
 			data = eval(data);
 			if (data.success) {
@@ -22,15 +22,13 @@ function login() {
 		});
 	}
 }
-
 $(function() {
 	passNull($("#name"));
 	passNull($("#password"));
-
-	var login = $("#password");
-	login.bind("keydown", function(event) {
+	var input = $("input");
+	input.bind("keydown", function(event) {
 		if (event.keyCode == 13) {
-			alert(123);
+			login();
 		}
 	});
 });

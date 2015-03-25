@@ -13,7 +13,3 @@
 				<img src="/source/images/icons/linux@2x.png" alt="img" width="70">
 		</p>
 </div>
-
-<div class="menu-refresh">
-		<img src="/source/images/icons/refresh2@2x.png" width="40" alt="img" onclick="javascript:location.reload();">
-</div>

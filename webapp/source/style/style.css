@@ -146,22 +146,6 @@ h5 {
 	height: 70px;
 }
 
-.menu-refresh {
-	z-index: 999999;
-	position: fixed;
-	bottom: 10px;
-	right: 10px;
-	background-color: #000000;
-	filter: alpha(opacity =         40);
-	-moz-opacity: 0.4;
-	-khtml-opacity: 0.4;
-	opacity: 0.4;
-	-moz-border-radius: 7px;
-	-webkit-border-radius: 7px;
-	border-radius: 7px;
-	cursor: pointer;
-}
-
 .load-page {
 	width: 100%;
 	text-align: center;
@@ -2521,4 +2505,30 @@ label#message_label {
 
 #contactMessage:focus {
 	border-color: #e34e47;
+}
+
+.slide-box {
+	width: 150px;
+	z-index: 99999;
+	position: fixed;
+	top: 85%;
+	right: -152px;
+	height: 45px;
+	background: #c20d23;
+	padding-top: 0px;
+}
+
+.slide-box .slide-box-button {
+	background: #c20d23 url(/source/images/icons/clip@2x.png) center;
+	width: 45px;
+	height: 45px;
+	position: absolute;
+	left: -50px;
+	cursor: pointer;
+}
+
+.slide-box img {
+	cursor: pointer;
+	width: 45px;
+	height: 45px;
 }
