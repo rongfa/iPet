@@ -62,6 +62,23 @@ public class AffirmPassordAction extends BaseAction {
 	}
 
 	/**
+	 * @Description: 校验验证码
+	 * @return 返回视图
+	 * @throws Exception
+	 */
+	public String verification() throws Exception {
+		JSON json = new JSON();
+		String email = (String) ActionContext.getContext().getSession().get("email");
+		String locationVerification = (String) ActionContext.getContext().getSession().get(email);
+		if (!verification.equals(locationVerification)) {
+			json.setSuccess(false);
+			json.setMessage("验证码错误");
+		}
+		putJSON(json);
+		return AJAX;
+	}
+
+	/**
 	 * @Description: 确认密码（决定走注册还是找回密码入口）
 	 * @return 返回视图
 	 * @throws Exception

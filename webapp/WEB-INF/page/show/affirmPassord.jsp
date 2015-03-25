@@ -12,7 +12,7 @@
 <body>
 		<div class="logo">iPet</div>
 		<div class="content">
-				<input type="text" id="verification" placeholder="验证码" />
+				<input type="text" id="verification" placeholder="验证码" onblur="verification()"/>
 				<input type="password" id="password" placeholder="登陆密码" />
 				<input type="password" id="affirmPassord" placeholder="确认密码" />
 				<input type="text" class="button" readonly="readonly" onclick="affirm()" value="提交申请" />
@@ -20,7 +20,7 @@
 						如果长时间没有收到验证码,请<a onclick="getVerification()">重新获取</a>,或者<a onclick="javascript:history.go(-1);" >重新填写邮箱</a>.
 				</div>
 				<div class="right-a">
-						<a onclick="goLogin()">直接登入iPet</a>
+						<a onclick="goLogin()">直接登入iPet?</a>
 				</div>
 		</div>
 </body>

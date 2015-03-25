@@ -15,10 +15,10 @@
 				<input type="text" id="email" placeholder="电子邮箱" />
 				<input id="button" type="text" class="button" readonly="readonly" onclick="getVerification()" value="获取验证码" />
 				<div class="right-a">
-						<a onclick="goLogin()">直接登入iPet</a>
+						<a onclick="goLogin()">登入iPet</a>
 				</div>
 				<div class="right-a">
-						<a onclick="goRegist()">申请加入iPet</a>
+						<a onclick="goRegist()">申请加入iPet?</a>
 				</div>
 		</div>
 </body>
