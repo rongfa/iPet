@@ -4,15 +4,13 @@ import iPet.pager.IQuery;
 import iPet.pager.PageResult;
 
 import java.io.Serializable;
-import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
-import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.springframework.orm.hibernate3.HibernateCallback;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /***
  * @Description: service层通过该类调用数据库
@@ -20,12 +18,27 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
  * @date 2015-3-24 下午8:41:16
  */
 @SuppressWarnings("all")
-public class BaseDao<T> extends HibernateDaoSupport {
+public class BaseDao<T> {
 
 	private Class<T> entityClass;
 
 	public BaseDao(Class<T> entityClass) {
 		this.entityClass = entityClass;
+	}
+
+	private SessionFactory sessionFactory;
+
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+
+	@Autowired
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	private Session getCurrentSession() {
+		return sessionFactory.getCurrentSession();
 	}
 
 	/**
@@ -34,7 +47,7 @@ public class BaseDao<T> extends HibernateDaoSupport {
 	 *            需要保存的对象
 	 */
 	public void save(T t) {
-		getHibernateTemplate().save(t);
+		this.getCurrentSession().save(t);
 	}
 
 	/**
@@ -43,7 +56,7 @@ public class BaseDao<T> extends HibernateDaoSupport {
 	 *            需要更新的对象
 	 */
 	public void update(T t) {
-		getHibernateTemplate().update(t);
+		this.getCurrentSession().update(t);
 	}
 
 	/**
@@ -52,7 +65,7 @@ public class BaseDao<T> extends HibernateDaoSupport {
 	 *            删除对象的ID
 	 */
 	public void delete(Serializable id) {
-		getHibernateTemplate().delete(get(id));
+		this.getCurrentSession().delete(get(id));
 	}
 
 	/**
@@ -62,21 +75,11 @@ public class BaseDao<T> extends HibernateDaoSupport {
 	 * @return 数据库中查找到的对象
 	 */
 	public T get(Serializable id) {
-		T t = getHibernateTemplate().get(entityClass, id);
+		Object t = this.getCurrentSession().get(entityClass, id);
 		if (t == null) {
 			throw new RuntimeException("找不到对应id=" + id + "的对象");
 		}
-		return t;
-	}
-
-	/**
-	 * @Description: 获取所有对象
-	 * @param entityClass
-	 *            真是数据类型
-	 * @return 获取到的对象
-	 */
-	public List<T> getAll(Class<T> entityClass) {
-		return getHibernateTemplate().loadAll(entityClass);
+		return (T) t;
 	}
 
 	/**
@@ -100,23 +103,18 @@ public class BaseDao<T> extends HibernateDaoSupport {
 			builder.append(" where ").append(where);
 		}
 
-		List<T> rows = getHibernateTemplate().execute(new HibernateCallback<List<T>>() {
-			public List<T> doInHibernate(Session session) throws HibernateException, SQLException {
-				Query query = session.createQuery(builder.toString());
-				// 设置查询条件的值
-				List params = baseQuery.getParams();
-				int index = 0;
-				for (Object object : params) {
-					query.setParameter(index++, object);
-				}
-				// 设置分页的信息
-				int first = (pageResult.getCurrentPage() - 1) * pageResult.getPageSize();
-				int max = pageResult.getPageSize();
-				query.setFirstResult(first).setMaxResults(max);
-				return query.list();
-			}
-		});
-		pageResult.setRows(rows);
+		Query query = this.getCurrentSession().createQuery(builder.toString());
+		// 设置查询条件的值
+		List params = baseQuery.getParams();
+		int index = 0;
+		for (Object object : params) {
+			query.setParameter(index++, object);
+		}
+		// 设置分页的信息
+		int first = (pageResult.getCurrentPage() - 1) * pageResult.getPageSize();
+		int max = pageResult.getPageSize();
+		query.setFirstResult(first).setMaxResults(max);
+		pageResult.setRows(query.list());
 		return pageResult;
 	}
 
@@ -135,20 +133,14 @@ public class BaseDao<T> extends HibernateDaoSupport {
 		if (StringUtils.isNotBlank(where)) {
 			builder.append(" where ").append(where);
 		}
-		System.out.println("PageResult findCount:" + builder.toString());
-
-		return getHibernateTemplate().execute(new HibernateCallback<Integer>() {
-			public Integer doInHibernate(Session session) throws HibernateException, SQLException {
-				Query query = session.createQuery(builder.toString());
-				// 设置查询条件的值
-				List params = baseQuery.getParams();
-				int index = 0;
-				for (Object object : params) {
-					query.setParameter(index++, object);
-				}
-				return ((Long) query.uniqueResult()).intValue();
-			}
-		});
+		Query query = this.getCurrentSession().createQuery(builder.toString());
+		// 设置查询条件的值
+		List params = baseQuery.getParams();
+		int index = 0;
+		for (Object object : params) {
+			query.setParameter(index++, object);
+		}
+		return ((Long) query.uniqueResult()).intValue();
 	}
 
 	/**
@@ -160,7 +152,13 @@ public class BaseDao<T> extends HibernateDaoSupport {
 	 * @return 查询到的数据
 	 */
 	public List findByHql(String hql, Object... values) {
-		return getHibernateTemplate().find(hql, values);
+		Query q = this.getCurrentSession().createQuery(hql);
+		if (values != null && values.length > 0) {
+			for (int i = 0; i < values.length; i++) {
+				q.setParameter(i, values[i]);
+			}
+		}
+		return q.list();
 	}
 
 	/**
@@ -175,22 +173,4 @@ public class BaseDao<T> extends HibernateDaoSupport {
 		List list = findByHql(hql, values);
 		return list.isEmpty() ? null : list.get(0);
 	}
-
-	/**
-	 * @Description: 查询缓存 // 查询缓存:一般很少用,命中率低,没有查询条件
-	 * @param hql
-	 *            hql语句
-	 * @return
-	 */
-	public List findCacheByHql(final String hql) {
-		return getHibernateTemplate().execute(new HibernateCallback<List<T>>() {
-			public List<T> doInHibernate(Session session) throws HibernateException, SQLException {
-				Query query = session.createQuery(hql);
-				// 把上面查出来的结果放到缓存里面
-				query.setCacheable(true);
-				return query.list();
-			}
-		});
-	}
-
 }
