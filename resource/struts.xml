@@ -64,5 +64,13 @@
 			/WEB-INF/page/show/affirmPassord.jsp
 		</result>
 	</action>
+	
+	<!-- 账号信息视图 -->
+	<action name="account.*" class="iPet.action.AccountAction" method="{1}">
+		<result>
+			/WEB-INF/page/show/account.jsp
+		</result>
+	</action>
+	
 	</package>
 </struts>

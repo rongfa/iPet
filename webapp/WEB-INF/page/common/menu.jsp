@@ -5,7 +5,7 @@
 						<img src="/source/images/icons/wifi@2x.png" alt="img" width="111" class="logo-left replace-2x">
 				</div>
 				<div class="sidebar-header-decoration"></div>
-				<a href="#" class="nav-item home-nav-icon">主页</a>
+				<a href="home.action" class="nav-item home-nav-icon">主页</a>
 				<div class="side-deco"></div>
 				<a href="#" id="sub-menu-one" class="nav-item user-nav-icon">
 						社交圈<em></em>
@@ -35,11 +35,7 @@
 				<div class="side-deco"></div>
 				<a href="#" class="nav-item clip-nav-icon">收藏录</a>
 				<div class="side-deco"></div>
-				<a href="#" class="nav-item columns-nav-icon">个人档案</a>
-				<div class="side-deco"></div>
-				<a href="#" class="nav-item set-nav-icon">账号信息</a>
-				<div class="side-deco"></div>
-				<a href="#" class="nav-item cloud-up-nav-icon">关于iPet</a>
+				<a href="account.action" class="nav-item set-nav-icon">账号信息</a>
 				<div class="side-deco"></div>
 				<a href="logout.action" class="nav-item stumble-nav-icon">登出</a>
 				<div class="side-deco"></div>
@@ -63,8 +59,14 @@
 <div class="slide-box">
 		<div class="padd">
 				<div class="slide-box-button" onclick="slide()"></div>
-				<a href="#"><img src="/source/images/icons/upload@2x.png"></a>
-				<a onclick="javascript:window.location.reload(true);"><img src="/source/images/icons/refresh@2x.png"></a>
-				<a  onclick="javascript:history.go(-1);"><img src="/source/images/icons/arrow-left@2x.png"></a>
+				<a href="#">
+						<img src="/source/images/icons/upload@2x.png">
+				</a>
+				<a onclick="javascript:window.location.reload(true);">
+						<img src="/source/images/icons/refresh@2x.png">
+				</a>
+				<a onclick="javascript:history.go(-1);">
+						<img src="/source/images/icons/arrow-left@2x.png">
+				</a>
 		</div>
 </div>
