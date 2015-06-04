@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+nav {
+	width: 100%;
+	text-align: center;
+}
+
+nav ul {
+	height: 50px;
+	width: 33%;
+	text-align: center;
+	display: inline-block;
+	cursor: pointer;
+	margin-top: 25px;
+	list-style: none;
+}
+
+nav ul li a {
+	color: #001028;
+}
